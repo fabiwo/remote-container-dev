@@ -1,0 +1,21 @@
+version: '3.9'
+services:
+  service1:
+    volumes:
+      - .:/workspace:cached
+      - /c/Users/${USERNAME}/.vscode/extensions://root/.vscode-server/extensions
+      - /c/Users/${USERNAME}/.ssh://root/.ssh
+
+    # [Optional] Required for ptrace-based debuggers like C++, Go, and Rust
+    # cap_add:
+    #   - SYS_PTRACE
+    # security_opt:
+    #   - seccomp:unconfined
+
+    # Overrides default command so things don't shut down after the process ends.
+    command: /bin/sh -c "while sleep 1000; do :; done"
+
+  service2:
+    volumes:
+      - ./service2:/service2
+    command: /bin/sh -c "while sleep 1000; do :; done"

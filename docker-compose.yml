@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  service1:
+    build:
+      context: .
+      dockerfile: service1.dockerfile
+    ports:
+      - '1080:1080'
+
+  service2:
+    build:
+      context: .
+      dockerfile: service2.dockerfile
+    ports:
+      - '8000:8000'

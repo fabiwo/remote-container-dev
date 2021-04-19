@@ -1,0 +1,20 @@
+// For additional options visit: https://code.visualstudio.com/docs/remote/devcontainerjson-reference#_devcontainerjson-properties
+// Basic Devcontainer Docs: https://code.visualstudio.com/docs/remote/create-dev-container
+// Advanced Devcontainer Docs: https://code.visualstudio.com/docs/remote/containers-advanced
+// Additional Troubleshooting: https://github.com/microsoft/vscode-docs/blob/main/docs/remote/troubleshooting.md
+{
+  "name": "DEV ENV",
+  "dockerComposeFile": ["../docker-compose.yml", "docker-compose.extend.yml"],
+  // Which container is open in VSCode
+  "service": "service1",
+  "workspaceFolder": "/workspace",
+  "shutdownAction": "stopCompose",
+  "postCreateCommand":[""],
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "git.path": "/usr/bin/git",
+    "python.pythonPath": "/usr/bin/python3"
+  },
+  "remoteEnv": {
+  }
+}
